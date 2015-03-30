@@ -1,0 +1,19 @@
+<div ng-init="getById()">
+	<div class="msg-success cssSlideUp" ng-show="msg">{{msg}}</div>
+	<form ng-submit="save()" class="pure-form pure-form-aligned">
+		<fieldset>
+        	<div class="pure-control-group">
+				<label>Nome:</label>
+				<input type="text" ng-model="contato.nome" required>
+			</div>
+			<div class="pure-control-group">
+				<label>Fone:</label>
+				<input type="text" ng-model="contato.fone" required>
+			</div>
+			<div class="pure-controls">
+				<button type="submit" class="pure-button pure-button-primary">Salvar</button>
+		   		<a href="#/" class="pure-button">Voltar</a>
+			</div>
+		</fieldset>
+	</form>
+</div>

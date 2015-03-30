@@ -1,0 +1,13 @@
+<html ng-app="app">
+	<head>
+		<link rel="stylesheet" href="css/lib/pure-min.css">
+		<link rel="stylesheet" href="css/app.css">
+		<script src="js/lib/angular.min.js"></script>
+		<script src="js/lib/angular-route.min.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+	<body ng-controller="agendaController">
+		<div class="loading" ng-show="showLoaderFlag">Carregando...</div>
+		<div ng-view></div>
+	</body>
+</html>

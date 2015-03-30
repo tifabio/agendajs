@@ -1,0 +1,27 @@
+<div ng-init="getAll()">
+	<div class="msg-success" ng-show="msg">{{msg}}</div>
+	<table width="50%" class="pure-table pure-table-horizontal">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Fone</th>
+				<th>Acao</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr class="pure-table-odd">
+				<td colspan="3"><a href='#/contato' class="pure-button pure-button-primary">Novo</a></td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr ng-repeat="contato in contatos">
+				<td>{{contato.nome}}</td>
+				<td>{{contato.fone}}</td>
+				<td>
+					<a href='#/contato/{{contato.id}}' class="pure-button pure-button-primary">Editar</a>
+					<a href='javascript:void(0)' ng-click="del(contato.id,contato.nome)" class="pure-button">Excluir</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

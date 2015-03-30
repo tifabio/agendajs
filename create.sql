@@ -1,0 +1,8 @@
+CREATE TABLE agenda ( 
+id INT(10) NOT NULL AUTO_INCREMENT,
+nome VARCHAR(60),
+fone VARCHAR(12),
+PRIMARY KEY (id)
+);
+
+-- DROP TABLE agenda
