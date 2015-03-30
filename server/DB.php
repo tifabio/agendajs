@@ -5,11 +5,11 @@
 class DB {
 
     private static $DB_HOST = '127.0.0.1';
-    //private $DB_PORT = '3306';
-    private static $DB_PORT = '3311';
+    private static $DB_PORT = '3306';
+    //private static $DB_PORT = '3311';
     private static $DB_NAME = 'test';
     private static $DB_USER = 'root';
-    private static $DB_PASSWORD = 'root';
+    private static $DB_PASSWORD = '';
 
     /**
      * Instãncia singleton
