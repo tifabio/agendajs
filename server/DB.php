@@ -4,13 +4,6 @@
  */
 class DB {
 
-    private static $DB_HOST = '127.0.0.1';
-    private static $DB_PORT = '3306';
-    //private static $DB_PORT = '3311';
-    private static $DB_NAME = 'test';
-    private static $DB_USER = 'root';
-    private static $DB_PASSWORD = '';
-
     /**
      * Instãncia singleton
      * @var DB 
@@ -27,7 +20,7 @@ class DB {
      * Construtor privado da classe singleton
      */
     private function __construct() {
-        self::$connection = new PDO("mysql:dbname=" . self::$DB_NAME . ";host=" .  self::$DB_HOST . ";port=" .  self::$DB_PORT,  self::$DB_USER,  self::$DB_PASSWORD,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        self::$connection = new PDO(getenv('PG_CONN'),  getenv('PG_USER'),  getenv('PG_PASS'),array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         self::$connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     }
