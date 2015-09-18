@@ -1,5 +1,5 @@
 // URL de acesso ao servidor RESTful
-SERVER_URL = "http://localhost/angular/agenda/server";
+SERVER_URL = "http://agendajs.herokuapp.com/server";
 
 // Criação ao $app que é o modulo que representa toda a aplicação
 var $app = angular.module('app',['ngRoute']);
