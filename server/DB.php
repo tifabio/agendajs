@@ -20,7 +20,8 @@ class DB {
      * Construtor privado da classe singleton
      */
     private function __construct() {
-        self::$connection = new PDO(getenv('PG_CONN'),  getenv('PG_USER'),  getenv('PG_PASS'),array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        $url = parse_url(getenv("DATABASE_URL"));
+        self::$connection = new PDO("pgsql:dbname=".substr($url["path"], 1).";host=".$url["host"].";port=".$url["port"],  $url["user"],  $url["pass"],array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         self::$connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     }
