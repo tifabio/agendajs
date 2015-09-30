@@ -2,6 +2,8 @@
 
 require 'DB.php';
 
+require 'Log/logentries.php';
+
 require 'Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim(array('debug' => false));
@@ -21,3 +23,5 @@ function formatJson($obj)
 include("agenda.php");
 
 $app->run();
+
+$log->Debug($app->request()->getMethod() . ' ' . $app->request()->getPath());
